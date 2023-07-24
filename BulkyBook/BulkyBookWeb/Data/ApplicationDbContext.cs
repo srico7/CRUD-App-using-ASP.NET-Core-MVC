@@ -1,6 +1,15 @@
-﻿namespace BulkyBookWeb.Data
+﻿using BulkyBookWeb.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace BulkyBookWeb.Data
 {
-    public class DbContext
+    public class ApplicationDbContext : DbContext
     {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+
+        }
+
+        public DbSet<Category> Categories { get; set; }
     }
 }
